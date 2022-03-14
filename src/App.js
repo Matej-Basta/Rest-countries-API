@@ -14,11 +14,7 @@ function App() {
     <div>
       <BrowserRouter>
       <Header />
-
-      <select>
-        <Link to="/Africa" onClick={() => setChangedLink("africa")}><option>Africa</option></Link>        
-        <Link to="/Amercias" onClick={() => setChangedLink("americas")}><option>Americas</option></Link>
-      </select>
+      
       <nav className="nav-links">
         <Link to="/" onClick={() => setChangedLink("home")}>All countries</Link>
         {" "}
