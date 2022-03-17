@@ -1,10 +1,14 @@
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import {ThemeContext} from "../context/ThemeContext";
+import {useContext} from "react";
 
 function Country({country, setChangedLink}) {
     const {name, population, region, capital, flags, cca2} = country;
 
+    const {theme} = useContext(ThemeContext);
+
     return (
-        <Link onClick={() => setChangedLink(cca2)} className="country" to={"/country/" + cca2}>
+        <Link onClick={() => setChangedLink(cca2)} className={theme === "light" ? "country" : "country--dark"} to={"/country/" + cca2}>
             <img src={flags.png} alt={"flag of " + name.common} />
             <div>
             <h2>{name.common}</h2>
